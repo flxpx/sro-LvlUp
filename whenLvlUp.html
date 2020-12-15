@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' integrity='sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2' crossorigin='anonymous'>
+    <title>When will I lvl Up</title>
+    <style>
+       
+       
+
+        /* .progress {
+            width: 100%;
+            background-color: lightgoldenrodyellow;
+            height: 20px;
+            position: fixed;
+            bottom: 0;
+            color: black;
+        } */
+
+        .bar {
+            height: 100%;
+            width: 78.8%;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    
+    
+
+    <!-- <div class="s1">
+        <h4>Sample1</h4>
+        <input id="s1Xp" type="number" class="form form-control" placeholder="enter your current xp" value="1"><br>
+        <input id="s1Sp" type="number" class="form form-control" placeholder="enter your current SP" value="1"><br>
+        <button id="s1btn" class="btn btn-secondary">Take first Sample</button>
+        <p>sample took on: <span class="badge badge-success"><span class="s1Time"></span></span></p>
+        <p>XP: <span class="s1Xp"></span>%</p>
+        <p><span class="s1Sp"></span>SP</p>
+    </div> -->
+
+    <!-- <div class="s2">
+        <h4>Sample2</h4>
+        <input id="s2Xp" type="number" class="form form-control"  placeholder="enter your current xp" value="50">
+        <input id="s2Sp" type="number" class="form form-control" placeholder="enter your current SP" value="1">
+        <button id="s2btn">Take second Sample</button>
+        <p>sample took on: <span class="badge badge-success"><span class="s2Time"></span></span></p>
+        <p>XP: <span class="s2Xp"></span>%</p>
+        <p><span class="s2Sp"></span>SP</p>
+    </div> -->
+    <div class="container">
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+    How it Works
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">How it works</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+
+            Enter your current XP and SP in the first form and submit them by hitting the Submit first Sample Button.
+          </p>
+          <p>
+              Wait a few minutes (the longer, the better the results) - then enter and submit your current XP and SP in the second form.
+
+          </p>
+
+          <p>
+            I recommend at least 30 minutes between samples for a somewhat accurate result.
+
+        </p>
+
+        <p>
+            Hit the show result button - the app will then calculate your estimated lvl up time.
+
+        </p>
+
+
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cool</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col">
+
+                
+                            <h3>When will I lvl up?</h3>
+                            <h6>Enter your current XP in % and SP (optional) </h6>
+                            <form class="form-group">
+                                <label class="sr-only" for="s1Xp">XP 1</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">XP 1</div>
+                                    </div>
+                                    <input type="number" class="form-control" id="s1Xp" placeholder="your Current XP in %">
+                                </div>
+                        
+                                <label class="sr-only" for="s1Sp">SP 1</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">SP 1</div>
+                                    </div>
+                                    <input type="number" class="form-control" id="s1Sp" placeholder="your Current SP">
+                                </div>
+                        
+                                <button class="btn btn-primary mb-2 btn-lg btn-block" id="s1btn">Submit first Sample</button>
+                            </form>
+                            
+                            
+                            <div class="sec2" style="display: none;">
+                                <p>Sample1 took on: <span class="badge badge-light"><span class="s1Time"></span></span></p>
+                                
+                            <h6>Wait a few minutes, then enter your current XP in % and SP (optional) again </h6>
+                                <form class="form-group">
+                                    <label class="sr-only" for="s2Xp">XP 2</label>
+                                    <div class="input-group mb-2 mr-sm-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">XP 2</div>
+                                        </div>
+                                        <input type="number" class="form-control" id="s2Xp" placeholder="your Current XP in %">
+                                    </div>
+                            
+                                    <label class="sr-only" for="s2Sp">SP 2</label>
+                                    <div class="input-group mb-2 mr-sm-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">SP 2</div>
+                                        </div>
+                                        <input type="number" class="form-control" id="s2Sp" placeholder="your Current SP">
+                                    </div>
+                            
+                                    <button class="btn btn-primary mb-2 btn-lg btn-block" id="s2btn">Show Results</button>
+                                </form>
+                                
+                                
+                                
+                            
+                                <div class="result" style="display: none;">
+                                    <p>sample took on: <span class="badge badge-light"><span class="s2Time"></span></span></p>
+                                    <p>Time Difference: <span class="badge timeDifLive"></span> minutes</p>
+                                    <!-- <button id="calc" class="btn btn-primary">Ok tell me when!</button> -->
+                                    
+                                    <p>Your rate is: <span class="xpPerHour"></span>%/h, <span class="spPerHour"></span> SP/h</p>
+                            
+                                    <p>You'll lvl up on: <span class="lvlUp alert alert-success"></span> with a total of <span class="spGain"></span> SP</p>
+                                    <p class="badge timeDifBadge"></p>
+                                </div>
+                            </div>
+                    
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed-bottom">
+        <div class="reset all">
+            <a href="javascript:void(0)">reset</a>
+        </div>
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">xx%</div>
+          </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'></script>
+    <!-- <div class="progress"><div class="bar"></div><span class="xp"></span>%</div> -->
+    
+
+    
+    
+    <script>
+            let s1Time;
+            let s2Time;
+            let timeDif;
+            let xpPerHour;
+            let spPerHour;
+            let s1Xp;
+            let s2Xp;
+            let s1Sp;
+            let s2Sp;
+            let xpDif;
+            let spDif;
+            let xpRemaining;
+            let timeRemaining;
+            let lvlUpTime;
+            let spGain;
+            let timeDifInHh;
+
+
+            
+
+        $(document).ready(function() {
+            //jQuery code in here
+
+            
+
+            $('.progress-bar').text(s2Xp+"%")
+            
+            s1Time = new Date(Number(localStorage.getItem('s1Time')))
+            console.log("after refresh:", typeof(s1Time))
+            console.log(s1Time)
+            s1Xp = localStorage.getItem('s1Xp')
+            s1Sp = localStorage.getItem('s1Sp')
+
+            s2Time = new Date(Number(localStorage.getItem('s2Time')))
+            s2Xp = localStorage.getItem('s2Xp')
+            s2Sp = localStorage.getItem('s2Sp')
+            
+
+
+            //load Data
+            $('.s1Time').text(s1Time.toLocaleString())
+            $('.s1Xp').text(s1Xp)
+            $('.s1Sp').text(s1Sp)
+            $('#s1Xp').val(s1Xp)
+            $('#s1Sp').val(s1Sp)
+
+            $('.s2Time').text(s2Time.toLocaleString())
+            $('.s2Xp').text(s2Xp)
+            $('.s2Sp').text(s2Sp)
+            $('#s2Xp').val(s2Xp)
+            $('#s2Sp').val(s2Sp)
+
+            if($('#s1Xp').val()) {
+                $('.sec2').show()
+            }
+
+            
+            $('#s1btn').on('click', function(){
+                event.preventDefault()                
+                s1Time = Date.now()
+                // s1Time = 10*60*1000
+                s1Xp = $('#s1Xp').val()
+                s1Sp = $('#s1Sp').val()
+                console.log("s1Xp", s1Xp)
+                console.log("s1Sp", s1Sp)
+                console.log("s1Time", s1Time)
+
+                localStorage.setItem('s1Time', s1Time)
+                localStorage.setItem('s1Xp', Number(s1Xp))
+                localStorage.setItem('s1Sp', Number(s1Sp))
+
+                $('.s1Time').text(new Date(s1Time).toLocaleString())
+                $('.s1Xp').text(s1Xp)
+                $('.s1Sp').text(s1Sp)
+
+                
+                $('.progress-bar').text(s1Xp+"%")
+                $('.progress-bar').css('width', s1Xp+"%")
+
+                $('.sec2').show()
+                
+            })
+
+            $('#s2btn').on('click', function(){
+                event.preventDefault()
+                
+                s2Time = Date.now()
+                console.log(s2Time)
+                console.log("typeof:",typeof(s2Time))
+                
+                // s2Time = 41*60*1000
+                s2Xp = $('#s2Xp').val()
+                s2Sp = $('#s2Sp').val()
+
+                console.log("s2Xp", s2Xp)
+                console.log("s2Sp", s2Sp)
+                console.log("s2Time", s2Time)
+                
+                localStorage.setItem('s2Time', s2Time)
+                localStorage.setItem('s2Xp', Number(s2Xp))
+                localStorage.setItem('s2Sp', Number(s2Sp))
+
+                $('.s2Time').text(new Date(s2Time).toLocaleString())
+                $('.s2Xp').text(s2Xp)
+                $('.s2Sp').text(s2Sp)
+
+                timeDif = s2Time - s1Time
+
+                if(timeDif/1000/60 <= 5) {
+                    $('.timeDifLive').removeClass('badge-succes badge-warning')
+                    $('.timeDifLive').addClass('badge-danger')
+                    
+                } else if ((timeDif/1000/60 <= 15)) {
+                    $('.timeDifLive').removeClass('badge-danger badge-success')
+                    $('.timeDifLive').addClass('badge-warning')
+                    
+                } else {
+                    $('.timeDifLive').removeClass('badge-warning badge-danger')
+                    $('.timeDifLive').addClass('badge-success')
+                    
+                }
+
+                $('.timeDifLive').text(Math.round(timeDif/1000/60))
+
+                $('.bar').css("width", s2Xp+"%")
+
+                $('.progress-bar').text(s2Xp+"%")
+                $('.progress-bar').css('width', s2Xp+"%")
+
+                
+                event.preventDefault()
+
+                $('.result').show()
+                console.log("s2Time", s2Time)
+                console.log("s2Time type of", typeof(s2Time))
+                
+                s2Time = Number(s2Time)
+                s1Time = Number(s1Time)
+                timeDif = s2Time - s1Time
+                xpDif = (s2Xp-s1Xp)
+                spDif = s2Sp - s1Sp
+
+                xpRemaining = 100 - s2Xp;
+
+                timeDifInMm = timeDif/1000/60
+                
+                console.log("timeDif", timeDifInMm,"minutes")
+
+                console.log("xpDif", xpDif)
+                console.log("xpRemaining", xpRemaining)
+
+                xpPerHour = 60/timeDifInMm*xpDif
+                console.log("xpPerHour", xpPerHour)
+
+                spPerHour = 60/timeDifInMm*spDif
+                console.log("spPerHour", spPerHour)
+
+                timeRemaining = xpRemaining/xpPerHour
+                console.log("timeRemaining",timeRemaining,"hours")
+
+                spGain = timeRemaining*spPerHour
+
+                Date.prototype.addMinutes= function(m){
+                    this.setMinutes(this.getMinutes()+m);
+                    return this;
+                }
+
+                lvlUpTime = new Date().addMinutes(timeRemaining*60)
+                console.log("current time:", new Date())
+                console.log("Level up on: ", lvlUpTime)
+
+
+                $('.xpPerHour').text((Math.round(xpPerHour * 100) / 100).toLocaleString())
+                $('.spPerHour').text((Math.round(spPerHour)).toLocaleString())
+                
+                $('.spGain').text((Math.round((Number(spGain)+Number(s2Sp)) * 100) / 100).toLocaleString())
+                $('.lvlUp').text(lvlUpTime.toLocaleString())
+
+
+                if (timeDif/1000/60 <= 15) {
+                    $('.timeDifBadge').addClass('badge-warning')
+                    $('.timeDifBadge').text("Results are likely to be inaccurate - Time Difference between samples below 15minutes!")
+                } else {
+                    $('.timeDifBadge').removeClass('badge-warning')
+                    $('.timeDifBadge').addClass('badge-light')
+                    $('.timeDifBadge').text("Disclaimer: Results might be inaccurate!")
+                }
+
+                $('.progress-bar').text(s2Xp+"%")
+
+                
+            })
+
+            $('#calc').on('click', function() {
+                
+
+                
+            })
+
+
+            $('.reset a').on('click', function(){
+                localStorage.clear();
+                location.reload();
+            })
+
+
+        });
+    </script>
+
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js'
+integrity='sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx'
+crossorigin='anonymous'></script>
+</body>
+</html>
